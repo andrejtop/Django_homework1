@@ -26,7 +26,8 @@ def time_view(request) -> str:
     # обратите внимание – здесь HTML шаблона нет, 
     # возвращается просто текст
     current_time = None
-    msg = f"Текущее время: {datetime.datetime.now().time()} <a{reverse('home')}</a>"
+    msg = f"<h1>Текущее время:</h1>" \
+          f"<p>{datetime.datetime.now().time()}</p><a href='{reverse('home')}'>На главную</a>"
     return HttpResponse(msg)
 
 
