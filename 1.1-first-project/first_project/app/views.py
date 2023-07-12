@@ -33,7 +33,7 @@ def time_view(request) -> str:
 def workdir_view(request) -> str:
     # Получаем список содержимого директории
     contents = os.listdir(path='.')
-    all_dir_files = "\n".join(contents)
+    all_dir_files = "\n///".join(contents)
 
     return HttpResponse(all_dir_files)
 
