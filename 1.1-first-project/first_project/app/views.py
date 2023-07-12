@@ -35,6 +35,8 @@ def workdir_view(request) -> str:
     # Получаем список содержимого директории
     contents = os.listdir(path='.')
     all_dir_files = "\n///".join(contents)
+    all_list = f"<h1>Текущее содержимое рабочей директории:</h1>" \
+               f"<p>{all_dir_files}</p><a href='{reverse('home')}'>На главную</a"
 
-    return HttpResponse(all_dir_files)
+    return HttpResponse(all_list)
 
