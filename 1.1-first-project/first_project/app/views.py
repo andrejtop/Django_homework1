@@ -31,12 +31,9 @@ def time_view(request) -> str:
 
 
 def workdir_view(request) -> str:
-    files = []
-    current_dir = os.getcwd()
     # Получаем список содержимого директории
-    contents = os.listdir(current_dir)
-    for content in contents:
-        files.append(content)
-    all_dir_files = "\n".join(files)
+    contents = os.listdir(path='.')
+    all_dir_files = "\n".join(contents)
 
     return HttpResponse(all_dir_files)
+
