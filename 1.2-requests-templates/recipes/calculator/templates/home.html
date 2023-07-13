@@ -8,8 +8,8 @@
 <h1> Рецепты на выбор:</h1>
 <ul>
     {% for recipes in recipe %}
-        <h1>{{ recipes }}</h1>
-        <a href="{% url 'rec' recipes %}"><p>подробнее</p></a>
+        <h1 style="color: blueviolet; font-size: 30px">{{ recipes }}</h1>
+        <a href="{% url 'rec' recipes %}"><p style="color: red; font-size: 15px">подробнее</p></a>
     {% endfor %}
 </ul>
 </body>
