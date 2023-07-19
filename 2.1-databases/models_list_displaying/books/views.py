@@ -7,8 +7,8 @@ from books.models import Book
 def books_view(request):
     books = Book.objects.all()
     template = 'books/books_list.html'
-    paginator = Paginator(books, 2)
-    page = request.GET.get('page')
+    paginator = Paginator(books, 5)
+    page = request.GET.get('page', 5)
     books = paginator.get_page(page)
     context = {'books': books}
     return render(request, template, context)

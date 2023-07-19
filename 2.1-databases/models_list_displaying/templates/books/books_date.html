@@ -10,16 +10,14 @@
         <div class="row">
         {% for book in books %}
             <div class="book col-md-4">
-                <h2>{{ book.name }}</h2>
+                <h2><a href="{% url 'books' %}"> {{ book.name }} </a></h2>
                 <p>Автор: {{ book.author }}</p>
                 <p>Дата публикации: {{ book.pub_date }}</p>
             </div>
         {% endfor %}
             </div>
+        <a href="{% url 'books' %}{{ previous_book }}"><buttom> <{{ previous_book }} </buttom></a>
+        <a href="{% url 'books' %}{{ next_book }}"><buttom> {{ next_book }}> </buttom></a>
         </div>
     </div>
-
-    <a href="{% url 'books' %}{{ previous_book }}"> <button>Назад</button></a>
-    <a href="{% url 'books' %}{{ next_book }}"> <button>Вперед</button></a>
-
 {% endblock %}
