@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from django_filters.rest_framework import DjangoFilterBackend
 
+from advertisements.filters import AdvertisementFilter
 from advertisements.models import Advertisement
 from advertisements.permissions import IsOwnerPermission
 from advertisements.serializers import AdvertisementSerializer
@@ -16,7 +17,7 @@ class AdvertisementViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     ordering_fields = ['id', 'creator', 'created_at']
     filterset_class = AdvertisementFilter
-    # filterset_class = []
+
 
 
     def perform_create(self, serializer):
