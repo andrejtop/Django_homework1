@@ -15,6 +15,7 @@ class AdvertisementViewSet(ModelViewSet):
     serializer_class = AdvertisementSerializer
     filter_backends = [DjangoFilterBackend]
     ordering_fields = ['id', 'creator', 'created_at']
+    filterset_class = AdvertisementFilter
     # filterset_class = []
 
 
